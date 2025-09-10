@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Search, ChevronDown, Plus, ArrowUpRight, Check, X } from "lucide-react"
 
-// Generate recent dates for circulars
 const generateRecentDates = () => {
   const dates = []
   for (let i = 0; i < 20; i++) {
@@ -206,7 +205,6 @@ export default function CircularsPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(13)
 
-  // Reset pagination when filters change
   useEffect(() => {
     setCurrentPage(1)
   }, [searchTerm, filterType, itemsPerPage])
@@ -236,19 +234,15 @@ export default function CircularsPage() {
 
   return (
     <>
-      {/* Dark Header Bar */}
       <div className="bg-gray-900 text-white px-6 py-4">
         <h1 className="text-2xl font-bold">Circulars</h1>
         <p className="text-gray-300">Search for and view all circulars.</p>
       </div>
 
-      {/* Main Content */}
       <div className="p-6 space-y-6">
 
-      {/* Search and Filter Section */}
       <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
         <div className="flex items-center justify-between gap-6">
-          {/* Quick Search */}
           <div className="flex-1 max-w-sm">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Quick search a circular
@@ -276,13 +270,11 @@ export default function CircularsPage() {
             </div>
           </div>
 
-          {/* Total Circulars */}
           <div className="text-center">
             <div className="text-3xl font-bold text-gray-900">{filteredCirculars.length}</div>
             <div className="text-sm text-gray-600">Total circulars</div>
           </div>
 
-          {/* Filter Dropdown */}
           <div className="min-w-[180px]">
             <label className="block text-sm font-medium text-gray-900 mb-2">
               Filter circulars
@@ -303,7 +295,6 @@ export default function CircularsPage() {
             </div>
           </div>
 
-          {/* Create Circular Button */}
           <div className="flex items-end">
             <Link
               href="/circulars/create"
@@ -316,9 +307,7 @@ export default function CircularsPage() {
         </div>
       </div>
 
-      {/* All Circulars Table */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-        {/* Items per page selector */}
         <div className="p-4 border-b border-gray-200">
           <div className="flex items-center justify-end">
             <span className="text-sm text-gray-900">Showing</span>
@@ -341,7 +330,6 @@ export default function CircularsPage() {
           </div>
         </div>
 
-        {/* Table */}
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50">
@@ -398,7 +386,6 @@ export default function CircularsPage() {
           </table>
         </div>
 
-        {/* Pagination */}
         <div className="px-6 py-4 border-t border-gray-200">
           <div className="flex items-center justify-center space-x-1">
             {totalPages > 0 && (
@@ -455,7 +442,6 @@ export default function CircularsPage() {
         </div>
       </div>
 
-        {/* Footer */}
         <div className="text-center py-6">
           <p className="text-sm text-gray-500">Copyright © 2025 Relia Energy. All Rights Reserved</p>
         </div>

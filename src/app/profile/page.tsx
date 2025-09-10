@@ -66,7 +66,6 @@ export default function ProfilePage() {
     resolver: zodResolver(securitySchema),
   })
 
-  // Set default values
   useEffect(() => {
     setProfileValue("firstName", "Otor")
     setProfileValue("lastName", "John")
@@ -151,7 +150,6 @@ export default function ProfilePage() {
 
   return (
     <div className="p-6 space-y-6">
-      {/* Tab Navigation */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200">
         <div className="border-b border-gray-200">
           <nav className="flex space-x-8 px-6" aria-label="Tabs">
@@ -198,11 +196,9 @@ export default function ProfilePage() {
         </div>
 
         <div className="p-6">
-          {/* Personal Information Tab */}
           {activeTab === "personal" && (
             <form onSubmit={handleSubmitProfile(onProfileSubmit)} className="space-y-6">
               <div className="flex items-start space-x-6">
-                {/* Photo Upload */}
                 <div className="flex-shrink-0">
                   <div className="relative">
                     <div className="h-32 w-32 rounded-full border-4 border-dashed border-gray-300 flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors">
@@ -231,7 +227,6 @@ export default function ProfilePage() {
                   </p>
                 </div>
 
-                {/* Basic Info */}
                 <div className="flex-1 space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -310,7 +305,6 @@ export default function ProfilePage() {
                 </div>
               </div>
 
-              {/* Work Information */}
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Work Information</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -406,7 +400,6 @@ export default function ProfilePage() {
             </form>
           )}
 
-          {/* Security Tab */}
           {activeTab === "security" && (
             <form onSubmit={handleSubmitSecurity(onSecuritySubmit)} className="space-y-6">
               <div className="space-y-4">
@@ -506,7 +499,6 @@ export default function ProfilePage() {
             </form>
           )}
 
-          {/* Notifications Tab */}
           {activeTab === "notifications" && (
             <div className="space-y-6">
               <div className="space-y-4">
@@ -616,7 +608,6 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="text-center py-6">
         <p className="text-sm text-gray-500">Copyright &copy; 2025 Relia Energy. All Rights Reserved</p>
       </div>

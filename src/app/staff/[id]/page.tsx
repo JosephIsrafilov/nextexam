@@ -81,14 +81,12 @@ export default function EditStaffPage() {
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
-      // Validate file type
       const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png']
       if (!allowedTypes.includes(file.type)) {
         alert('Please select a valid image file (JPG, JPEG, or PNG)')
         return
       }
       
-      // Validate file size (2MB)
       if (file.size > 2 * 1024 * 1024) {
         alert('File size must be less than 2MB')
         return
@@ -109,7 +107,6 @@ export default function EditStaffPage() {
     setIsLoading(true)
     await new Promise(resolve => setTimeout(resolve, 1000))
     
-    // Update the staff member
     updateStaff(currentStaff.id, {
       firstName: data.firstName,
       lastName: data.lastName,
@@ -132,7 +129,6 @@ export default function EditStaffPage() {
     setIsLoading(true)
     await new Promise(resolve => setTimeout(resolve, 1000))
     
-    // Update the staff member's role
     updateStaff(currentStaff.id, {
       role: data.role,
     })
@@ -161,7 +157,6 @@ export default function EditStaffPage() {
 
   return (
     <div className="p-6 space-y-6">
-      {/* Back Button */}
       <Link
         href="/staff"
         className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-4"
@@ -170,13 +165,11 @@ export default function EditStaffPage() {
         Back
       </Link>
 
-      {/* Edit Staff Profile Section */}
       <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
         <h1 className="text-2xl font-bold text-gray-900 mb-8">Edit Staff Profile</h1>
         
         <form onSubmit={handleSubmitProfile(onSubmitProfile)} className="space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Left Column - Photo Upload */}
             <div className="space-y-4">
               <div className="flex flex-col items-center">
                 <div className="relative">
@@ -209,10 +202,8 @@ export default function EditStaffPage() {
               </div>
             </div>
 
-            {/* Right Column - Form Fields */}
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* First Name */}
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-900 mb-2">
                     First name
@@ -228,7 +219,6 @@ export default function EditStaffPage() {
                   )}
                 </div>
 
-                {/* Last Name */}
                 <div>
                   <label htmlFor="lastName" className="block text-sm font-medium text-gray-900 mb-2">
                     Last name
@@ -244,7 +234,6 @@ export default function EditStaffPage() {
                   )}
                 </div>
 
-                {/* Email Address */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
                     Email address
@@ -260,7 +249,6 @@ export default function EditStaffPage() {
                   )}
                 </div>
 
-                {/* Phone Number */}
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">
                     Phone number
@@ -276,7 +264,6 @@ export default function EditStaffPage() {
                   )}
                 </div>
 
-                {/* Gender */}
                 <div>
                   <label htmlFor="gender" className="block text-sm font-medium text-gray-900 mb-2">
                     Gender
@@ -295,7 +282,6 @@ export default function EditStaffPage() {
                   )}
                 </div>
 
-                {/* Phone Number (Duplicate as shown in design) */}
                 <div>
                   <label htmlFor="phone2" className="block text-sm font-medium text-gray-900 mb-2">
                     Phone number
@@ -307,7 +293,6 @@ export default function EditStaffPage() {
                   />
                 </div>
 
-                {/* Staff ID */}
                 <div>
                   <label htmlFor="staffId" className="block text-sm font-medium text-gray-900 mb-2">
                     Staff ID
@@ -323,7 +308,6 @@ export default function EditStaffPage() {
                   )}
                 </div>
 
-                {/* Designation */}
                 <div>
                   <label htmlFor="designation" className="block text-sm font-medium text-gray-900 mb-2">
                     Designation
@@ -345,7 +329,6 @@ export default function EditStaffPage() {
                   )}
                 </div>
 
-                {/* Official Email */}
                 <div>
                   <label htmlFor="officialEmail" className="block text-sm font-medium text-gray-900 mb-2">
                     Official email
@@ -364,7 +347,6 @@ export default function EditStaffPage() {
             </div>
           </div>
 
-          {/* Edit Profile Button */}
           <div className="mt-8 flex justify-end">
             <button
               type="submit"
@@ -377,13 +359,11 @@ export default function EditStaffPage() {
         </form>
       </div>
 
-      {/* Assign Role Section */}
       <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
         <h1 className="text-2xl font-bold text-gray-900 mb-8">Assign Role</h1>
         
         <form onSubmit={handleSubmitRole(onSubmitRole)} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* User ID */}
             <div>
               <label htmlFor="userId" className="block text-sm font-medium text-gray-900 mb-2">
                 User ID
@@ -400,7 +380,6 @@ export default function EditStaffPage() {
               )}
             </div>
 
-            {/* Role */}
             <div>
               <label htmlFor="role" className="block text-sm font-medium text-gray-900 mb-2">
                 Role
@@ -427,7 +406,6 @@ export default function EditStaffPage() {
             </div>
           </div>
 
-          {/* Submit Button */}
           <div className="mt-8 flex justify-end">
             <button
               type="submit"
@@ -440,7 +418,6 @@ export default function EditStaffPage() {
         </form>
       </div>
 
-      {/* Footer */}
       <div className="text-center py-6">
         <p className="text-sm text-gray-500">Copyright &copy; 2025 Relia Energy. All Rights Reserved</p>
       </div>

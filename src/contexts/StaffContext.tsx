@@ -27,7 +27,6 @@ interface StaffContextType {
 
 const StaffContext = createContext<StaffContextType | undefined>(undefined)
 
-// Initial staff data matching the design exactly
 const initialStaff: Staff[] = [
   {
     id: 1,

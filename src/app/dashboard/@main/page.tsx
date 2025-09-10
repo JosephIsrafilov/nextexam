@@ -144,7 +144,6 @@ const applicationStats = {
 export default function MainSlot() {
   return (
     <div className="space-y-6">
-      {/* Statistics Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat) => (
           <div key={stat.name} className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
@@ -176,11 +175,8 @@ export default function MainSlot() {
         ))}
       </div>
 
-      {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Left Column */}
         <div className="space-y-6">
-          {/* Memo Table */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="px-6 py-4 border-b border-gray-200">
               <h3 className="text-lg font-semibold text-gray-900">Memo</h3>
@@ -233,7 +229,6 @@ export default function MainSlot() {
             </div>
           </div>
 
-          {/* Payment Vouchers Table */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="px-6 py-4 border-b border-gray-200">
               <h3 className="text-lg font-semibold text-gray-900">Payment Vouchers</h3>
@@ -281,9 +276,7 @@ export default function MainSlot() {
           </div>
         </div>
 
-        {/* Right Column */}
         <div className="space-y-6">
-          {/* Staff List Table */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="px-6 py-4 border-b border-gray-200">
               <h3 className="text-lg font-semibold text-gray-900">Staff List</h3>
@@ -328,7 +321,6 @@ export default function MainSlot() {
             </div>
           </div>
 
-          {/* Staff Applications Chart */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="px-6 py-4 border-b border-gray-200">
               <h3 className="text-lg font-semibold text-gray-900">Staff Applications</h3>
@@ -341,9 +333,7 @@ export default function MainSlot() {
               
               <div className="flex items-center justify-center mb-6">
                 <div className="relative w-48 h-48">
-                  {/* Donut Chart */}
                   <svg className="w-48 h-48 transform -rotate-90" viewBox="0 0 100 100">
-                    {/* Background circle */}
                     <circle
                       cx="50"
                       cy="50"
@@ -352,7 +342,6 @@ export default function MainSlot() {
                       stroke="#e5e7eb"
                       strokeWidth="8"
                     />
-                    {/* Approved segment */}
                     <circle
                       cx="50"
                       cy="50"
@@ -363,7 +352,6 @@ export default function MainSlot() {
                       strokeDasharray={`${(applicationStats.approved / applicationStats.total) * 251} 251`}
                       strokeDashoffset="0"
                     />
-                    {/* Pending segment */}
                     <circle
                       cx="50"
                       cy="50"
@@ -374,7 +362,6 @@ export default function MainSlot() {
                       strokeDasharray={`${(applicationStats.pending / applicationStats.total) * 251} 251`}
                       strokeDashoffset={`-${(applicationStats.approved / applicationStats.total) * 251}`}
                     />
-                    {/* Rejected segment */}
                     <circle
                       cx="50"
                       cy="50"
@@ -386,7 +373,6 @@ export default function MainSlot() {
                       strokeDashoffset={`-${((applicationStats.approved + applicationStats.pending) / applicationStats.total) * 251}`}
                     />
                   </svg>
-                  {/* Center text */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-gray-900">{applicationStats.total}</div>
@@ -396,7 +382,6 @@ export default function MainSlot() {
                 </div>
               </div>
               
-              {/* Legend */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
@@ -425,7 +410,6 @@ export default function MainSlot() {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="text-center py-6">
         <p className="text-sm text-gray-500">Copyright &copy; 2025 Relia Energy. All Rights Reserved</p>
       </div>

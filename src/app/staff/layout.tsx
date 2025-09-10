@@ -30,18 +30,14 @@ export default function StaffLayout({
       <div className="flex">
         <Sidebar />
         <div className="flex-1 flex flex-col">
-          {/* Top Header with User Profile (simplified) */}
           <header className="bg-white border-b border-gray-200 px-6 py-4">
             <div className="flex items-center justify-between">
-              {/* Page Title */}
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">All Staff</h1>
                 <p className="text-gray-600">View, search for and add new staff</p>
               </div>
               
-              {/* User Profile Section */}
               <div className="flex items-center">
-                {/* Notifications */}
                 <div className="relative dropdown-container">
                   <button
                     onClick={() => setShowNotifications(!showNotifications)}
@@ -91,7 +87,6 @@ export default function StaffLayout({
                   )}
                 </div>
 
-                {/* User Profile */}
                 <div className="relative dropdown-container ml-4">
                   <button
                     onClick={() => setShowProfileDropdown(!showProfileDropdown)}

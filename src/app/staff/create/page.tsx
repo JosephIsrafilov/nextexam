@@ -43,14 +43,12 @@ export default function CreateStaffPage() {
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
-      // Validate file type
       const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png']
       if (!allowedTypes.includes(file.type)) {
         alert('Please select a valid image file (JPG, JPEG, or PNG)')
         return
       }
       
-      // Validate file size (2MB)
       if (file.size > 2 * 1024 * 1024) {
         alert('File size must be less than 2MB')
         return
@@ -69,7 +67,6 @@ export default function CreateStaffPage() {
     setIsLoading(true)
     await new Promise(resolve => setTimeout(resolve, 1500))
     
-    // Add the new staff to the context
     addStaff({
       firstName: data.firstName,
       lastName: data.lastName,
@@ -98,14 +95,12 @@ export default function CreateStaffPage() {
     return (
       <div className="fixed inset-0 flex items-center justify-center z-50">
         <div className="relative">
-          {/* Modal Image */}
           <img
             src="/modalsuccess.png"
             alt="Success Modal"
             className="max-w-sm w-full h-auto"
           />
           
-          {/* Continue Button Overlay */}
           <button
             onClick={handleContinue}
             className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-blue-700 text-white py-2 px-8 rounded-lg font-medium hover:from-blue-600 hover:to-blue-800 transition-all duration-200 shadow-lg"
@@ -119,7 +114,6 @@ export default function CreateStaffPage() {
 
   return (
     <div className="p-6 space-y-6">
-      {/* Back Button */}
       <Link
         href="/staff"
         className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-4"
@@ -128,13 +122,11 @@ export default function CreateStaffPage() {
         Back
       </Link>
 
-      {/* Main Form */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
           <h1 className="text-2xl font-bold text-gray-900 mb-8">Add a New Staff</h1>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Left Column - Photo Upload */}
             <div className="space-y-4">
               <div className="flex flex-col items-center">
                 <div className="relative">
@@ -167,10 +159,8 @@ export default function CreateStaffPage() {
               </div>
             </div>
 
-            {/* Right Column - Form Fields */}
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* First Name */}
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-900 mb-2">
                     First name
@@ -186,7 +176,6 @@ export default function CreateStaffPage() {
                   )}
                 </div>
 
-                {/* Last Name */}
                 <div>
                   <label htmlFor="lastName" className="block text-sm font-medium text-gray-900 mb-2">
                     Last name
@@ -202,7 +191,6 @@ export default function CreateStaffPage() {
                   )}
                 </div>
 
-                {/* Email Address */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
                     Email address
@@ -218,7 +206,6 @@ export default function CreateStaffPage() {
                   )}
                 </div>
 
-                {/* Phone Number */}
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">
                     Phone number
@@ -234,7 +221,6 @@ export default function CreateStaffPage() {
                   )}
                 </div>
 
-                {/* Gender */}
                 <div>
                   <label htmlFor="gender" className="block text-sm font-medium text-gray-900 mb-2">
                     Gender
@@ -253,7 +239,6 @@ export default function CreateStaffPage() {
                   )}
                 </div>
 
-                {/* Phone Number (Duplicate as shown in design) */}
                 <div>
                   <label htmlFor="phone2" className="block text-sm font-medium text-gray-900 mb-2">
                     Phone number
@@ -265,7 +250,6 @@ export default function CreateStaffPage() {
                   />
                 </div>
 
-                {/* Role */}
                 <div>
                   <label htmlFor="role" className="block text-sm font-medium text-gray-900 mb-2">
                     Role
@@ -289,7 +273,6 @@ export default function CreateStaffPage() {
                   )}
                 </div>
 
-                {/* Designation */}
                 <div>
                   <label htmlFor="designation" className="block text-sm font-medium text-gray-900 mb-2">
                     Designation
@@ -311,7 +294,6 @@ export default function CreateStaffPage() {
                   )}
                 </div>
 
-                {/* Staff ID */}
                 <div>
                   <label htmlFor="staffId" className="block text-sm font-medium text-gray-900 mb-2">
                     Staff ID
@@ -327,7 +309,6 @@ export default function CreateStaffPage() {
                   )}
                 </div>
 
-                {/* Official Email */}
                 <div>
                   <label htmlFor="officialEmail" className="block text-sm font-medium text-gray-900 mb-2">
                     Official email
@@ -346,7 +327,6 @@ export default function CreateStaffPage() {
             </div>
           </div>
 
-          {/* Add Staff Button */}
           <div className="mt-8 flex justify-end">
             <button
               type="submit"
@@ -359,7 +339,6 @@ export default function CreateStaffPage() {
         </div>
       </form>
 
-      {/* Footer */}
       <div className="text-center py-6">
         <p className="text-sm text-gray-500">Copyright &copy; 2025 Relia Energy. All Rights Reserved</p>
       </div>

@@ -62,7 +62,7 @@ export default function CircularsLayout({
       <div className="flex">
         <Sidebar />
         <div className="flex-1 flex flex-col">
-          {/* Top Header with User Profile */}
+          
           <header className="bg-white border-b border-gray-200 px-6 py-4">
             <div className="flex items-center justify-end">
               <div className="flex items-center space-x-4">

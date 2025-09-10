@@ -13,7 +13,6 @@ export default function StaffPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(13)
 
-  // Reset pagination when filters change
   useEffect(() => {
     setCurrentPage(1)
   }, [searchTerm, filterStatus, itemsPerPage])
@@ -41,10 +40,8 @@ export default function StaffPage() {
 
   return (
     <div className="p-6 space-y-6">
-      {/* Search and Filter Section */}
       <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
         <div className="flex items-center justify-between gap-6">
-          {/* Quick Search */}
           <div className="flex-1 max-w-sm">
             <label className="block text-sm font-medium text-gray-900 mb-2">
               Quick search a staff
@@ -72,13 +69,11 @@ export default function StaffPage() {
             </div>
           </div>
 
-          {/* Total Staff Count */}
           <div className="text-center">
             <div className="text-3xl font-bold text-gray-900">{staff.length}</div>
             <div className="text-sm text-gray-600">Total number of staff</div>
           </div>
 
-          {/* Filter Staff */}
           <div className="min-w-[180px]">
             <label className="block text-sm font-medium text-gray-900 mb-2">
               Filter staff
@@ -100,7 +95,6 @@ export default function StaffPage() {
             </div>
           </div>
 
-          {/* Add New Staff Button */}
           <Link
             href="/staff/create"
             className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -111,13 +105,11 @@ export default function StaffPage() {
         </div>
       </div>
 
-      {/* Staff Table */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200">
         <div className="px-6 py-4 border-b border-gray-200">
           <h2 className="text-lg font-semibold text-gray-900">All Staff</h2>
         </div>
         
-        {/* Items per page selector */}
         <div className="p-4 border-b border-gray-200">
           <div className="flex items-center justify-end">
             <span className="text-sm text-gray-900">Showing</span>
@@ -214,7 +206,6 @@ export default function StaffPage() {
           </table>
         </div>
 
-        {/* Pagination */}
         <div className="px-6 py-4 border-t border-gray-200">
           <div className="flex items-center justify-center space-x-1">
             <button
@@ -263,7 +254,6 @@ export default function StaffPage() {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="text-center py-6">
         <p className="text-sm text-gray-500">Copyright &copy; 2025 Relia Energy. All Rights Reserved</p>
       </div>

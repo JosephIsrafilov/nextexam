@@ -29,12 +29,9 @@ export default function ProfileLayout({
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="flex">
-        {/* Sidebar */}
         <Sidebar />
         
-        {/* Main Content */}
         <div className="flex-1 flex flex-col">
-          {/* Header */}
           <header className="bg-white shadow-sm border-b border-gray-200">
             <div className="px-6 py-4">
               <div className="flex items-center justify-between">
@@ -44,7 +41,6 @@ export default function ProfileLayout({
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  {/* Notifications */}
                   <div className="relative dropdown-container">
                     <button
                       onClick={() => setShowNotifications(!showNotifications)}
@@ -91,7 +87,6 @@ export default function ProfileLayout({
                     )}
                   </div>
 
-                  {/* User Profile */}
                   <div className="relative dropdown-container ml-4">
                     <button
                       onClick={() => setShowProfileDropdown(!showProfileDropdown)}

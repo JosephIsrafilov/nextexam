@@ -32,7 +32,6 @@ export default function CreateCircularPage() {
     resolver: zodResolver(createCircularSchema),
   })
 
-  // Set default values
   useEffect(() => {
     setValue("sentFrom", "Otor John")
     setValue("date", new Date().toLocaleDateString('en-GB'))
@@ -55,14 +54,12 @@ export default function CreateCircularPage() {
     return (
       <div className="fixed inset-0 flex items-center justify-center z-50">
         <div className="relative">
-          {/* Modal Image */}
           <img
             src="/modalsuccess.png"
             alt="Success Modal"
             className="max-w-sm w-full h-auto"
           />
           
-          {/* Continue Button Overlay */}
           <button
             onClick={handleContinue}
             className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-blue-700 text-white py-2 px-8 rounded-lg font-medium hover:from-blue-600 hover:to-blue-800 transition-all duration-200 shadow-lg"
@@ -76,7 +73,6 @@ export default function CreateCircularPage() {
 
   return (
     <div className="p-6 space-y-6">
-      {/* Back Button */}
       <Link
         href="/circulars"
         className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-4"
@@ -85,13 +81,11 @@ export default function CreateCircularPage() {
         Back
       </Link>
 
-      {/* Main Form */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
           <h1 className="text-2xl font-bold text-gray-900 mb-8">Create Circular</h1>
           
           <div className="space-y-6">
-            {/* Circular Title */}
             <div>
               <label htmlFor="title" className="block text-sm font-medium text-gray-900 mb-2">
                 Circular title
@@ -107,7 +101,6 @@ export default function CreateCircularPage() {
               )}
             </div>
 
-            {/* Sent From */}
             <div>
               <label htmlFor="sentFrom" className="block text-sm font-medium text-gray-900 mb-2">
                 Sent from
@@ -123,7 +116,6 @@ export default function CreateCircularPage() {
               )}
             </div>
 
-            {/* Sent To */}
             <div>
               <label htmlFor="sentTo" className="block text-sm font-medium text-gray-900 mb-2">
                 Sent to
@@ -146,7 +138,6 @@ export default function CreateCircularPage() {
               )}
             </div>
 
-            {/* Date */}
             <div>
               <label htmlFor="date" className="block text-sm font-medium text-gray-900 mb-2">
                 Date
@@ -167,7 +158,6 @@ export default function CreateCircularPage() {
               )}
             </div>
 
-            {/* Circular Message */}
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
                 Circular message
@@ -184,7 +174,6 @@ export default function CreateCircularPage() {
             </div>
           </div>
 
-          {/* Send Circular Button */}
           <div className="mt-8 flex justify-end">
             <button
               type="submit"
@@ -197,7 +186,6 @@ export default function CreateCircularPage() {
         </div>
       </form>
 
-      {/* Footer */}
       <div className="text-center py-6">
         <p className="text-sm text-gray-500">Copyright &copy; 2025 Relia Energy. All Rights Reserved</p>
       </div>
